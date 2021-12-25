@@ -64,6 +64,7 @@ async def auto_filter(bot, update):
             file_name = filter.get("file_name")
             file_type = filter.get("file_type")
             file_link = filter.get("file_link")
+            file_size = filter.get("file_size")
             
             if file_type == "video":
                 if allow_video: 
@@ -102,7 +103,7 @@ async def auto_filter(bot, update):
             
             results.append(
                 [
-                    InlineKeyboardButton(file_name, url=file_link)
+                    InlineKeyboardButton(file_size + file_name, url=file_link)
                 ]
             )
         
